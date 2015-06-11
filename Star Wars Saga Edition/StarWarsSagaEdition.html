@@ -66,7 +66,7 @@
 				</tr>
 			  </tbody>
 			</table>
-			<p>Force Sensitive? <input type="checkbox" class="sheet-forceShow" value="1" name="attr_force-Show"  title="Force Sensitive character?" /></p>
+		
 		</div>
 		<div class="col">
 			<table>		
@@ -104,14 +104,16 @@
 			</table>
 			<p>Ignore CT? <input type="checkbox" value="-@{CT}" name="attr_CTIgnoreDT"  title="Does Damage Threshold ignore decrease from the Condition Track?" /></p>
 			
-			<table style="text-align:left">
-				<tr>	
-					<td><label>Damage Reduction</label><input type="number" name="attr_DR" value="0" title="Damage Reduction" /></td>
-				</tr>
-				<tr>
-					<td><label>Shield Rating</label><input type="number" name="attr_SR" value="0" title="Current Shield Rating" /> / <input type="number" name="attr_SR_max" value="0" title="Max Shield Rating" /></td>
-				</tr>	
-			</table>
+			<br />
+			<label>Damage Reduction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>	<input type="checkbox" class="sheet-DRShow" value="1" name="attr_DR-Show" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>	
+				<span class="DRBody"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="number" name="attr_DR" value="0" title="Damage Reduction" />	</span>
+			<span></span>	<br />
+			<label>Shield Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-SRShow" value="1" name="attr_SR-Show" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>	
+					<span class="SRBody"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="attr_SR" value="0" title="Current Shield Rating" /> / <input type="number" name="attr_SR_max" value="0" title="Max Shield Rating" /></span>
+			<span></span>	<br />
+			<label>Immune&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-immuneShow" value="1" name="attr_immune-Show" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>		
+				<span class="immuneBody"><br /><input type="text" name="attr_Immune" value="" title="Immunities" style="100%" /> </span>
+			<span></span>	
 			
 					
 		</div>
@@ -260,8 +262,9 @@
 			  </tbody>
 			</table>
 			<br />			
-			<table class="spacing">
-				<tr colspan="5"><div class="textHead">Armor</div></tr>
+			<input type="checkbox" class="sheet-sect-show sheet-hidden" value="1" name="attr_armor-show" /> 		
+			<table class="spacing sect">
+				<tr colspan="5"><div class="textHead">Armor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sheet-sect-show" title="Show/Hide Armor Section" name="attr_armor-show" value="1" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span></div></tr>
 				<tr>	<th width="50%">Armor Worn</th>		<th class="small">Ref Def<br />Bonus</th>		<th class="small">Fort Def<br />Bonus</th>		<th class="small" width="90px">Max Dex<br />Bonus</th>		<th>Speed</th>		</tr>
 				<tr>
 					<td><input type="text" name="attr_ArmorWorn" style="width:100%" title="Armor Name" /></td>
@@ -336,7 +339,7 @@
 					</table>
 				</fieldset>
 		</div>	
-		<div class="col">
+		<div class="col">  
 			<table>
 				<tr><div class="textHead">Skills</div></tr>
 					<thead>
@@ -736,7 +739,7 @@
 						<td><input type="checkbox" value="5" name="attr_UseComputerFeat_max" title="Focused in Use Computer?" /></td> <!-- Skill Focus -->
 						<td><input type="number" class="skills" name="attr_UseComputerMisc" title="Use Computer Miscellaneous Modifier" value="0" /></td>
 					</tr>
-					<tr class="sheet-forceBody"> 
+					<tr>
 						<td class="skillsCol1">Use the Force</td>
 						<td><button type="roll" name="roll_UsetheForceCheck" value="&{template:skill} {{name=Use the Force}} {{skill=[[1d20+@{UsetheForce}+?{Other Modifiers|0}[Other]]]}}" title="Roll Use the Force"></button></td>
 						<td><input type="number" class="skills" name="attr_UsetheForce" value="@{level|max}[Half Level]+@{UsetheForceMod}[Mod]+@{UsetheForceFeat}[Training]+@{UsetheForceFeat|max}[Focus]+@{UsetheForceMisc}[Misc]+@{CT}[CT]" disabled="true" title="Use the Force Total" /></td> <td>&nbsp;=&nbsp;</td>	
@@ -758,9 +761,13 @@
 			<div class="textHead">Attack Options</div>
 				<textarea type="text" name="attr_AttackOptions" rows="2" class="ActionNotes" title="Attack Options"></textarea>
 			<div class="textHead">Special Actions</div>
-				<textarea type="text" name="attr_SpecialActions" rows="2" class="ActionNotes" title="Special Actions"></textarea>	
-			<div class="textHead sheet-forceBody">Force Powers</div>
-				<textarea type="text" name="attr_ForcePowers" rows="2" class="ActionNotes forceBody" title="Force Power Suite"></textarea>
+				<textarea type="text" name="attr_SpecialActions" rows="2" class="ActionNotes" title="Special Actions"></textarea>
+			<input type="checkbox" class="sheet-forceShow sheet-hidden" value="1" name="attr_force-Show" />  				
+				<div class="textHead sheet-forceBody">Force Powers</div>
+				<textarea type="text" name="attr_ForcePowers" rows="2" class="ActionNotes  sheet-forceBody" title="Force Power Suite"></textarea>
+			<input type="checkbox" class="sheet-sect-show sheet-hidden" value="1" name="attr_StarshipManeuvers-Show" />  				
+				<div class="textHead sheet-sect">Starship Maneuvers</div>
+				<textarea type="text" name="attr_StarshipManeuvers" rows="2" class="ActionNotes sheet-sect" title="Starship Maneuvers"></textarea>
 		</div>		
 	</div>	
 
@@ -828,6 +835,9 @@
 					<td colspan="3"><input type="text" name="attr_credits" value="0" style="width:100%" title="Credits" /></td>	
 				</tr>			
 			</table>
+			<input type="checkbox" class="sheet-sect-show sheet-hidden" value="1" name="attr_droid-Show" />  				
+				<div class="textHead sheet-sect">Droid Systems</div>
+				<textarea type="text" name="attr_DroidSystems" rows="2" class="sheet-sect" title="Droid Systems"></textarea>
 		</div>
 	</div>
 	<div class="clear"></div>
@@ -835,23 +845,49 @@
 	<div class="3colrow">
 		<div class="col">
 			<div class="textHead">Special Qualities</div>
-			<textarea type="text" name="attr_SpecialQualities" title="Special Qualities" ></textarea>
+				<textarea type="text" name="attr_SpecialQualities" title="Special Qualities" ></textarea>
+			
+			<input type="checkbox" class="sheet-forceShow sheet-hidden" value="1" name="attr_force-Show" />  				
+				<div class="textHead forceBody">Force Techniques</div>
+				<textarea type="text" name="attr_ForceTechniques" rows="2" class="forceBody" title="Force Techniques"></textarea>
 		</div>
 		<div class="col">
 			<div class="textHead">Feats</div>
-			<textarea type="text" name="attr_Feats" title="Feats List" ></textarea>
+				<textarea type="text" name="attr_Feats" title="Feats List" ></textarea>
+			<input type="checkbox" class="sheet-forceShow sheet-hidden" value="1" name="attr_force-Show" />  				
+				<div class="textHead sheet-forceBody">Force Secrets</div>
+				<textarea type="text" name="attr_ForceSecrets" rows="2" class="sheet-forceBody" title="Force Secrets"></textarea>			
+
 		</div>
 		<div class="col">
 			<div class="textHead">Talents</div>
-			<textarea type="text" name="attr_Talents" title="Talents List"></textarea>
+				<textarea type="text" name="attr_Talents" title="Talents List"></textarea>
+			<input type="checkbox" class="sheet-forceShow sheet-hidden" value="1" name="attr_force-Show" />  				
+				<div class="textHead sheet-forceBody">Force Regimes</div>
+				<textarea type="text" name="attr_ForceRegime" rows="2" class="sheet-forceBody" title="Force Regimes"></textarea>
 		</div>
 	</div>
 	<br />
 	<div class="colrow">
 			<div class="textHead">Notes</div>
 			<textarea type="text" name="attr_Notes" title="Notes"></textarea>
+	</div>		
+	<div class="clear"></div> <hr />
+	
+	<div class="2colrow">
+		<div class="col">
+			<div class="textHead"><button type="roll" name="roll_PCStatBlock" value="&{template:statBlock} @{PCStatBlock}" title="Post Character Stat Block to chat"></button> Statistic Block&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sheet-sect-show" title="Show Stat Block Template" name="attr_statBlock-show" value="1" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span></div>
+			<input type="checkbox" class="sheet-sect-show sheet-hidden" value="1" name="attr_statBlock-show" /> 				
+				<textarea type="text" name="attr_PCStatBlock" class="StatBlock sheet-sect">" title="Stat Block Template Roll information" {{name=@{character_name}}} {{size=Medium}}} {{gender=}} {{race=@{species}}} {{class=@{rank}}} {{destiny=@{Destiny}}} {{background=@{background}}} {{force=@{fp}}} {{forcedice=@{fp|max}}} {{dsp=@{dsp}}} {{init=[[@{Initiative}]]}} {{perception=[[@{perception}]]}} {{perception-notes=@{perception|max}}} {{language=@{language}}} {{ref=[[@{Reflex}]]}} {{flatref=[[@{ReflexFlatFooted}]]}} {{fort=[[@{Fortitude}]]}} {{will=[[@{will}]]}} {{hp=@{hp}/@{hp|max}}} {{ct=@{ct}}} {{dt=[[@{dt}]]}} {{speed=@{speed}}} {{meleeatk=[[@{bab}+@{str|max}]]}} {{meleedmg=[[@{str|max}+@{level|max}]]}} {{rangedatk=[[@{bab}+@{dex|max}]]}} {{rangeddmg=@{level|max}}} {{bab=@{bab}}} {{grapple=[[@{Grapple}]]}} {{atkoptions=@{AttackOptions}}} {{specialactions=@{SpecialActions}}} {{powers=@{ForcePowers}}} {{str=@{str} (@{str|max})}} {{dex=@{dex} (@{dex|max})}} {{con=@{con} (@{con|max})}} {{int=@{int} (@{int|max})}} {{wis=@{wis} (@{wis|max})}} {{cha=@{cha} (@{cha|max})}} {{specialqualities=@{SpecialQualities}}} {{talent=@{Talents}}} {{feat=@{feats}}} {{utf=[[@{usetheforce}]]}}</textarea>
+		</div>
+		<div class="col">
+			<div class="textHead">Reveal Sections</div>
+				<label>Force&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-forceShow" value="1" name="attr_force-Show"  title="Force Sensitive character?"  style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label>Droid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-sect-show" value="1" name="attr_droid-Show"  title="Droid character?"  style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label>Starship Maneuvers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-sect-show" value="1" name="attr_StarshipManeuvers-Show"  title="Starship Maneuvers"  style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
 	</div>
-	<div class="clear"></div>
+		<div class="clear"></div>
 </div>
 
 <div class="sheet-tab-content sheet-tab2"> <!-- start NPC Sheet -->
@@ -985,12 +1021,8 @@
 				<label>Perception </label>
 				<!-- <input type="checkbox" value="/w gm " name="attr_Perception-GMroll" title="Roll to GM in whisper? (check for yes)" /> Roll to GM? -->				
 			<br />
-			<button type="roll" name="roll_NPC-InitiativeShort" value="<!-- @{Initiative-GMroll} -->&{template:skill} {{name=Initiative}} {{skill=[[1d20+@{Initiative}+?{Other Modifiers|0}[Other]]]}}" title="Roll Initiative" ></button>
-				<label>Initiative</label>
-				<!-- <input type="checkbox" value="/w gm " name="attr_Initiative-GMroll" title="Roll to GM in whisper? (check for yes)" /> Roll to GM? -->
-			<br />
 			<button type="roll" name="roll_NPC-InitiativeTurn" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+?{Other Modifiers|0}[Other] &{tracker}]]}}" title="Roll Initiative to Turn Order window" ></button>
-				<label>Initiative (Turn Order) </label>	
+				<label>Initiative </label>	
 				<!-- <input type="checkbox" value="/w gm " name="attr_InitiativeTurn-GMroll" title="Roll to GM in whisper? (check for yes)" /> Roll to GM? -->
 			<table>
 					<div class="textHead">Grapple</div>
@@ -1623,7 +1655,7 @@
 <!-- start help section --> 
 <div> 
 For Help, please see the wiki page. <input type="text" name="attr_vehicle-EquipmentLocation" style="width:30em" title="Wiki URL" value="https://wiki.roll20.net/Star_Wars_Saga_Edition_Character_Sheet"/> <br/>
-<b>Last updated</b> 06/08/2015
+<b>Last updated</b> 06/11/2015
 </div>
 
 <!-- start roll templates --> 
@@ -1658,6 +1690,72 @@ For Help, please see the wiki page. <input type="text" name="attr_vehicle-Equipm
 		<tr><th>{{name}}</th> <td>{{skill}}</td></tr>
 		{{#crewname}}<tr><td colspan="2"><span class="tcat">{{crewname}}</span></td></tr>{{/crewname}}
 		{{#notes}}<tr><td colspan="2"><span class="tcat">Notes: </span>{{notes}}</td></tr>{{/notes}}
+    </table>
+	</div>
+</rolltemplate>
+	<rolltemplate class="sheet-rolltemplate-statBlock">
+    <div>
+	<table>
+		<tr>	<th>{{name}}</th>	</tr>
+		<tr>	<td>
+			{{#size}}{{size}}{{/size}} {{#gender}}{{gender}}{{/gender}} {{race}} {{class}}
+			<br/>
+			
+			{{#destiny}}<span class="tcat">Destiny </span>{{destiny}};	{{/destiny}} 
+			{{#background}}<span class="tcat">Background </span>{{background}}; 	{{/background}}
+			<span class="tcat">Force </span>{{force}} ({{forcedice}}); 
+			<span class="tcat">Dark Side </span>{{dsp}};<br />
+		
+			<span class="tcat">Init </span>{{init}}; 
+			<span class="tcat">Senses </span>Perception {{perception}}; {{#perception-notes}}{{perception-notes}};{{/perception-notes}}
+			<br />
+			
+			<span class="tcat">Languages </span>	{{language}};
+
+			<hr />
+			
+			<span class="tcat">Defenses </span>Ref {{ref}} (flat-footed {{flatref}}), Fort {{fort}}, Will {{will}}; 
+			<br /> 
+			
+			<span class="tcat">HP </span>{{hp}}; <span class="tcat">CT Penalty </span> {{ct}}; <span class="tcat">Threshold </span>{{dt}};
+			<br />			
+		
+			{{#immune}}	<span class="tcat">Immune </span>{{immune}};	{{/immune}}
+			
+			<hr />
+			
+			<span class="tcat">Speed </span>{{speed}};
+			<br />
+			
+			<span class="tcat">Melee by Weapon </span>{{meleeatk}} dmg {{meleedmg}};
+			<br />
+			
+			<span class="tcat">Ranged by Weapon </span>{{rangedatk}} dmg {{rangeddmg}};
+			<br />
+			
+			<span class="tcat">Base Atk </span>{{bab}}; 
+			<span class="tcat">Grp </span>{{grapple}};
+			<br />		
+		
+			{{#atkoptions}}	<span class="tcat">Atk Options </span>{{atkoptions}};	<br />	{{/atkoptions}}
+			
+			
+			{{#specialactions}}	<span class="tcat">Special Actions </span>{{specialactions}};	<br />	{{/specialactions}}
+			
+			{{#powers}}	<span class="tcat">Force Powers Known </span>(Use the Force {{utf}}) {{powers}};	<br />	{{/powers}}
+			
+			<hr />
+			
+			<span class="tcat">Abilities </span> Str {{str}}, Dex {{dex}}, Con {{con}}, Int {{int}}, Wis {{wis}}, Cha {{cha}}
+			<br />
+			
+			{{#specialqualities}}<span class="tcat">Special Qualities </span>{{specialqualities}};	<br />	{{/specialqualities}}
+		
+			<span class="tcat">Talents </span> {{talent}}
+			<br />	
+			
+			<span class="tcat">Feats </span> {{feat}}	
+		</td>	</tr>
     </table>
 	</div>
 </rolltemplate>

@@ -130,7 +130,6 @@
 .charsheet textarea.sheet-StatBlock {
 	font-size: 12px;
 	height:60px;
-	width:90%;
 	display: inline-block;
 }
 
@@ -158,10 +157,45 @@
 }
 
 /* ********	Start code for hiding sections ******* */
-input.sheet-forceShow:not(:checked) ~ .sheet-forceBody
-{
+.sheet-forceShow:not(:checked) ~ .sheet-forceBody,
+.sheet-SRShow:not(:checked) ~ .sheet-SRBody,
+.sheet-DRShow:not(:checked) ~ .sheet-DRBody,
+.sheet-immuneShow:not(:checked) ~ .sheet-immuneBody,
+.sheet-sect-show:not(:checked)~.sheet-sect{
     display: none;
-	height: 0;
+}
+
+.sheet-hidden {
+    display: none;
+}
+input[type="checkbox"] + span:not(.sheet-not-sheet-show)::before
+{
+    margin-right: 4px;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+
+    content: "[show]";
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+}
+
+input[type="checkbox"]:checked + span:not(.sheet-not-sheet-show)::before
+{
+    content: "[hide]";
+}
+.sheet-hideCheckbox {
+	opacity:0;
+	width: 35px;
+	height: 16px;
+	position: relative;
+	top: 5px;
+	left: 6px;
+	margin: -32px;
+	cursor: pointer;
+	z-index: 1;
 }
 
 /* ********	Start code for tabs ******* */
