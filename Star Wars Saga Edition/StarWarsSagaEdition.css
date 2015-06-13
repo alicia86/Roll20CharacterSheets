@@ -24,6 +24,7 @@
     text-align: right;
     font-size:14px;     
     width: auto;
+	vertical-align: middle;
 }
 
 .charsheet label.sheet-long {
@@ -161,6 +162,7 @@
 .sheet-SRShow:not(:checked) ~ .sheet-SRBody,
 .sheet-DRShow:not(:checked) ~ .sheet-DRBody,
 .sheet-immuneShow:not(:checked) ~ .sheet-immuneBody,
+.sheet-DefArmorLevelShow:not(:checked) ~ .sheet-DefArmorLevelBody,
 .sheet-sect-show:not(:checked)~.sheet-sect{
     display: none;
 }
@@ -168,7 +170,8 @@
 .sheet-hidden {
     display: none;
 }
-input[type="checkbox"] + span:not(.sheet-not-sheet-show)::before
+
+input[type="checkbox"] + span:not(.sheet-not-sheet-show)::before 
 {
     margin-right: 4px;
     line-height: 14px;
@@ -181,6 +184,14 @@ input[type="checkbox"] + span:not(.sheet-not-sheet-show)::before
     height: 14px;
     font-size: 12px;
 }
+
+span.sheet-not-sheet-show {
+    margin-right: 4px;
+    vertical-align: middle;
+	
+    min-height: 32px;
+}
+.sheet-displayInline-block{	display: inline-block;}
 
 input[type="checkbox"]:checked + span:not(.sheet-not-sheet-show)::before
 {

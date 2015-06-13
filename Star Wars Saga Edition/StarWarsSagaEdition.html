@@ -4,21 +4,21 @@
 <div class="clear"></div>
 
 <div class="sheet-tab-content sheet-tab1">
-	<table width="100%" style="text-align: left;">
+    <table width="100%" style="text-align: left;">
 		<tr width="33%">
-			<td><label>Class:</label>		</td><td colspan="4">	<input type="text" name="attr_rank" class="header" style="width:100%" /></td>	
+			<td><label>Class:</label>		</td><td colspan="4">	<input type="text" name="attr_rank" title="List of class levels @{rank}" class="header" style="width:100%" /></td>	
 			<td rowspan="3" style="vertical-align: top;"><div class="record"><img height="100px" width="300px" src="http://i.imgur.com/DzKBH23.png"/> <br />
 				Character Record Sheet</div></td>	
 		</tr>
 		<tr width="33%">
-			<td><label>Level:</label>		</td><td>	<input type="number" name="attr_level" class="header" value="1" /> <input type="number" name="attr_level_max" value="[[floor(@{level}/2)]]"  disabled="true" class="header" /></td>
+			<td><label>Level:</label>		</td><td>	<input type="number" name="attr_level" title="Total number of Heroic levels @{level}" class="header" value="1" /> <input type="number" name="attr_level_max" value="[[floor(@{level}/2)]]"  title="Half Level @{level|max}" disabled="true" class="header" /></td>
 			<td width="30px" rowspan="2"></td>	
-			<td><label>Background:</label>		</td><td>	<input type="text" name="attr_background" class="header" /></td>
+			<td><label>Background:</label>		</td><td>	<input type="text" name="attr_background" title="Background @{Background}" class="header" /></td>
 		</tr>
 		<tr width="33%">
-			<td><label>Species:</label>		</td><td>	<input type="text" name="attr_species" class="header" /></td>
+			<td><label>Species:</label>		</td><td>	<input type="text" name="attr_species" title="Species @{Species}" class="header" /></td>
 			<!-- rowspan placholder -->
-			<td><label>Destiny:</label>		</td><td>	<input type="text" name="attr_destiny" class="header" /></td>
+			<td><label>Destiny:</label>		</td><td>	<input type="text" name="attr_destiny" title="Destiny @{Destiny}" class="header" /></td>
 		</tr>
 	</table>
 	<hr/>
@@ -30,26 +30,26 @@
 				<tr><div class="textHead">Attributes</div>	</tr>
 				<tr>
 					<td class="col1">STR<br><div class="small">Strength</div></td>
-					<td><input type="number" name="attr_STR" value="8" title="Strength Score" /></td>
-					<td><input type="number" name="attr_Str_max" value="[[floor(@{STR}/2-5)]]" disabled="true" title="Strength Modifier" /></td>
+					<td><input type="number" name="attr_STR" value="8" title="Strength Score @{STR}" /></td>
+					<td><input type="number" name="attr_Str_max" value="[[floor(@{STR}/2-5)]]" disabled="true" title="Strength Modifier @{STR|max}" /></td>
 					<td><button type="roll" name="roll_STRCheck" value="&{template:skill} {{name=Strength}} {{skill=[[1d20+@{Str|max}[STR]+@{CT}[CT]]]}}" title="Roll Strength"></button></td>
 				</tr>
 				<tr>
 					<td class="col1">DEX<br><div class="small">Dexterity</div></td>
-					<td><input type="number" name="attr_DEX" value="8" title="Dexterity Score" /></td>
-					<td><input type="number" name="attr_DEX_max" value="[[floor(@{DEX}/2-5)]]" disabled="true" title="Dexterity Modifier" /></td>
+					<td><input type="number" name="attr_DEX" value="8" title="Dexterity Score @{DEX}" /></td>
+					<td><input type="number" name="attr_DEX_max" value="[[floor(@{DEX}/2-5)]]" disabled="true" title="Dexterity Modifier @{DEX|max}" /></td>
 					<td><button type="roll" name="roll_DEXCheck" value="&{template:skill} {{name=Dexterity}} {{skill=[[1d20+@{Dex|max}[DEX]+@{CT}[CT]]]}}" title="Roll Dexterity"></button></td>
 				</tr>
 				<tr>
 					<td class="col1">CON<br><div class="small">Constitution</div></td>
-					<td><input type="number" name="attr_CON" value="8" title="Constitution Score" /></td>
-					<td><input type="number" name="attr_CON_max" value="[[floor(@{CON}/2-5)]]" disabled="true" title="Constitution Modifier" /></td>
+					<td><input type="number" name="attr_CON" value="8" title="Constitution Score @{CON}" /></td>
+					<td><input type="number" name="attr_CON_max" value="[[floor(@{CON}/2-5)]]" disabled="true" title="Constitution Modifier @{CON|max}" /></td>
 					<td><button type="roll" name="roll_CONCheck" value="&{template:skill} {{name=Constitution}} {{skill=[[ 1d20+@{Con|max}[CON]+@{CT}[CT]]]}}" title="Roll Constitution"></button></td>
 				</tr>
 				<tr>
 					<td class="col1">INT<br><div class="small">Intelligence</div></td>
-					<td><input type="number" name="attr_INT" value="8" title="Intelligence Score" /></td>
-					<td><input type="number" name="attr_INT_max" value="[[floor(@{INT}/2-5)]]" disabled="true" title="Intelligence Modifier" /></td>
+					<td><input type="number" name="attr_INT" value="8" title="Intelligence Score @{INT}" /></td>
+					<td><input type="number" name="attr_INT_max" value="[[floor(@{INT}/2-5)]]" disabled="true" title="Intelligence Modifier @{INT|max}}" /></td>
 					<td><button type="roll" name="roll_INTCheck" value="&{template:skill} {{name=Intelligence}} {{skill=[[ 1d20+@{Int|max}[INT]+@{CT}[CT]]]}}" title="Roll Intelligence"></button></td>
 				</tr>
 				<tr>
@@ -60,8 +60,8 @@
 				</tr>
 				<tr>
 					<td class="col1">CHA<br><div class="small">Charisma</div></td>
-					<td><input type="number" name="attr_CHA" value="8" title="Charisma Score" /></td>
-					<td><input type="number" name="attr_CHA_max" value="[[floor(@{CHA}/2-5)]]" disabled="true" title="Charisma Modifier" /></td>
+					<td><input type="number" name="attr_CHA" value="8" title="Charisma Score @{CHA}" /></td>
+					<td><input type="number" name="attr_CHA_max" value="[[floor(@{CHA}/2-5)]]" disabled="true" title="Charisma Modifier @{CHA|max}" /></td>
 					<td><button type="roll" name="roll_CHACheck" value="&{template:skill} {{name=Charisma}} {{skill=[[ 1d20+@{Cha|max}[CHA]+@{CT}[CT]]]}}" title="Roll Charisma"></button></td>
 				</tr>
 			  </tbody>
@@ -86,33 +86,32 @@
 						<input type="radio" value="-10[Helpless]" name="attr_CT" /> Helpless</td>		
 				</tr>
 				<tr>	
-					<td> <input type="number" name="attr_HP" value="0" title="Current HP" /></td>
+					<td> <input type="number" name="attr_HP" value="0" title="Current HP @{HP}" /></td>
 					<td>&nbsp;/&nbsp;</td>
-					<td><input type="number" name="attr_HP_max" value="0" title="Max HP" /></td>
+					<td><input type="number" name="attr_HP_max" value="0" title="Max HP @{HP|max}" /></td>
 				</tr>
 				<tr>	<td colspan="4"><div class="textHead">Threshold</div> </td>			</tr>
 				<tr>	<th>Total</th>	<th></th>	<th>Defense</th> 	<th>Misc</th>		</tr>
 				<tr>	
-					<td><input type="number" name="attr_DT" value="@{DamageThresholdDefense}+@{DamageThresholdMisc}[Misc]+@{CTIgnoreDT}"  disabled="true" title="Damage Threshold" /></td>
+					<td><input type="number" name="attr_DT" value="@{DamageThresholdDefense}+@{DamageThresholdMisc}[Misc]+@{CTIgnoreDT}"  disabled="true" title="Damage Threshold @{DT}" /></td>
 					<td>&nbsp;=&nbsp;</td>
-					<td> <select name="attr_DamageThresholdDefense" class="modtype" title="Damage Threshold Defense">
+					<td> <select name="attr_DamageThresholdDefense" class="modtype" title="Damage Threshold Defense @{DamageThresholdDefense}">
 					  <option value="@{Fortitude}" selected>Fort</option>
 					  <option value="@{Will}">Will</option>
 					</select></td>
-					<td><input type="number" name="attr_DamageThresholdMisc" value="0"  title="Damage Threshold Miscellaneous Modifier" /></td>
+					<td><input type="number" name="attr_DamageThresholdMisc" value="0"  title="Damage Threshold Miscellaneous Modifier @{DamageThresholdMisc}" /></td>
 				</tr>
 			</table>
-			<p>Ignore CT? <input type="checkbox" value="-@{CT}" name="attr_CTIgnoreDT"  title="Does Damage Threshold ignore decrease from the Condition Track?" /></p>
-			
+			<p>Ignore CT? <input type="checkbox" value="-@{CT}[CT]" name="attr_CTIgnoreDT"  title="Does Damage Threshold ignore decrease from the Condition Track? @{CTIgnoreDT}" /></p>
+
+				<input type="checkbox" class="sheet-DRShow" value="1" name="attr_DR-Show" title="Show/Hide Damage Reduction" style="opacity:0;width: 35px;height: 32px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span class="sheet-not-sheet-show displayInline-block"><label>Damage Reduction</label></span>	
+				<span class="DRBody"><input type="number" name="attr_DR" value="0" title="Damage Reduction @{DR}" />	</span>
 			<br />
-			<label>Damage Reduction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>	<input type="checkbox" class="sheet-DRShow" value="1" name="attr_DR-Show" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>	
-				<span class="DRBody"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="number" name="attr_DR" value="0" title="Damage Reduction" />	</span>
-			<span></span>	<br />
-			<label>Shield Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-SRShow" value="1" name="attr_SR-Show" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>	
-					<span class="SRBody"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="attr_SR" value="0" title="Current Shield Rating" /> / <input type="number" name="attr_SR_max" value="0" title="Max Shield Rating" /></span>
-			<span></span>	<br />
-			<label>Immune&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" class="sheet-immuneShow" value="1" name="attr_immune-Show" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span>		
-				<span class="immuneBody"><br /><input type="text" name="attr_Immune" value="" title="Immunities" style="100%" /> </span>
+			<input type="checkbox" class="sheet-SRShow" value="1" name="attr_SR-Show" title="Show/Hide Shield Rating" style="opacity:0;width: 35px;height: 32px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span class="sheet-not-sheet-show displayInline-block"><label>Shield Rating</label></span>	
+					<span class="SRBody"><input type="number" name="attr_SR" value="0" title="Current Shield Rating @{SR}" /> / <input type="number" name="attr_SR_max" value="0" title="Max Shield Rating @{SR|max}" /></span>
+			<br />
+			<input type="checkbox" class="sheet-immuneShow" value="1" name="attr_immune-Show"  title="Show/Hide Immunities" style="opacity:0;width: 35px;height: 32px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span class="sheet-not-sheet-show displayInline-block"><label>Immune</label></span>		
+				<span class="immuneBody"><input type="text" name="attr_Immune" value="" title="Immunities @{Immune}" style="width:80%" /> </span>
 			<span></span>	
 			
 					
@@ -125,9 +124,9 @@
 					<td colspan="2"><div class="textHead">Destiny Pts</div></td>
 				</tr>
 				<tr>
-					<td colspan="4"><input type="number" name="attr_FP" value="5" title="Current Force Points" />  
+					<td colspan="4"><input type="number" name="attr_FP" value="5" title="Current Force Points @{FP}" />  
 						<button type="roll" name="roll_ForcePoint" value="&{template:skill} {{name=Force Point}} {{skill=[[@{fp|max}k1]]}} " title="Roll Force Point" ></button>
-						<input type="text" name="attr_FP_max" value="1d6" title="Force Point Dice" style="width:40px"/></td>
+						<input type="text" name="attr_FP_max" value="1d6" title="Force Point Dice @{FP|max}" style="width:40px"/></td>
 					<td colspan="2"><input type="number" name="attr_DP" value="0" title="Destiny Points" /></td>						
 				</tr>
 				<tr>						
@@ -136,18 +135,18 @@
 					<td colspan="2"><div class="textHead">Dark Side Pts</div></td>		
 				</tr>
 				<tr>	
-					<td colspan="2"><input type="number" name="attr_BAB" value="0" title="Base Attack Bonus" /></td>
-					<td colspan="2"><input type="number" name="attr_Speed" value="0" title="Speed in Squares" /></td>	
-					<td colspan="2"><input type="number" name="attr_DSP" value="0" title="Dark Side Points" /> </td>
+					<td colspan="2"><input type="number" name="attr_BAB" value="0" title="Base Attack Bonus @{BAB}" /></td>
+					<td colspan="2"><input type="number" name="attr_Speed" value="0" title="Speed in Squares @{Speed}" /></td>	
+					<td colspan="2"><input type="number" name="attr_DSP" value="0" title="Dark Side Points @{DSP}" /> </td>
 				</tr>			
 			</table>
 			<table style="text-align:left">
 				<tr>	
 					<td><button type="roll" name="roll_PerceptionShort" value="&{template:skill} {{name=Perception}} {{skill=[[1d20+@{Perception}+?{Other Modifiers|0}[Other]]]}} {{notes=@{Perception|max}}}" title="Roll Perception"></button>	<label style="width:80px">Perception</label> <br />
-					<input style="margin-left:50px" type="text" name="attr_Perception_max" placeholder="Senses Notes" title="Senses Notes" />	</td>
+					<input style="margin-left:50px" type="text" name="attr_Perception_max" placeholder="Senses Notes" title="Senses Notes @{Perception|max}" />	</td>
 				</tr>
 				<tr>
-					<td><button type="roll" name="roll_InitiativeTurn" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+?{Other Modifiers|0}[Other] &{tracker}]]}} " title="Roll Initiative to Turn Order window" ></button>		<label>Initiative</label>	</td>
+					<td><button type="roll" name="roll_InitiativeTurn" value="&{template:skill} {{name=Rolling for Turn Order}} {{skill=[[1d20+@{Initiative}+?{Other Modifiers|0}[Other] &{tracker}]]}}" title="Roll Initiative to Turn Order window" ></button>		<label>Initiative</label>	</td>
 				</tr>	
 			</table>
 			<table>
@@ -162,14 +161,14 @@
 				</tr>			
 				<tr>
 					<td><button type="roll" name="roll_GrappleCheck" value="&{template:skill} {{name=Grapple}} {{skill=[[1d20+@{Grapple}+?{Other Modifiers|0}[Other]]]}}" title="Roll Grapple"></button></td>		
-					<td><input type="number" name="attr_Grapple" value="@{BAB}[BAB] + @{GrpMod}[Mod] + @{GrpMod|max}[Misc] +@{CT}[CT]" disabled="true" title="Grapple" /></td>
+					<td><input type="number" name="attr_Grapple" value="@{BAB}[BAB] + @{GrpMod}[Mod] + @{GrpMod|max}[Misc] +@{CT}[CT]" disabled="true" title="Grapple @{Grapple}" /></td>
 					<td>&nbsp;=&nbsp;</td>
-					<td> <select name="attr_GrpMod" class="modtype" title="Choose the highest modifier">
+					<td> <select name="attr_GrpMod" class="modtype" title="Choose the highest modifier @{GrpMod}">
 					  <option value="@{str|max}">STR</option>
 					  <option value="@{dex|max}">DEX</option>
 					</select></td>				
 					<td>&nbsp;+&nbsp;</td>
-					<td><input type="number" name="attr_GrpMod_max" value="0" title="Miscellaneous Grapple Modifier" /></td>
+					<td><input type="number" name="attr_GrpMod_max" value="0" title="Miscellaneous Grapple Modifier @{GrpMod|max}" /></td>
 				</tr>
 			</table>
 
@@ -185,7 +184,7 @@
 						<th></th>
 						<th>Total</th>
 						<th></th>
-						<th>Level / Armor</th>
+						<th><input type="checkbox" class="sheet-DefArmorLevelShow" title="Show/Hide Armor / Level Formulas (close and reopen sheet to take affect)" name="attr_armor-show_max" value="1" style="opacity:0;width: 35px;height: 32px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span class="sheet-not-sheet-show displayInline-block">Level /<br/>Armor</span></th>
 						<th>Class</th>					
 						<th>Mod</th>
 						<th>Misc</th>
@@ -194,26 +193,27 @@
 			  <tbody>
 				<tr>
 					<td class="col1" rowspan="2">Reflex</td>
-					<td><input type="number" name="attr_Reflex" value="10+@{RefMod}+@{RefLevel}+@{RefClass}+@{RefMisc}+@{RefSizeMod}+@{CT}" disabled="true"  title="Reflex" /></td> 
+					<td><input type="number" name="attr_Reflex" value="10+@{RefMod}[Mod]+@{RefLevel}[Level]+@{RefClass}[Class]+@{RefMisc}[Misc]+@{RefSizeMod}[Size Mod]+@{CT}[CT]" disabled="true"  title="Reflex @{Reflex}" /></td> 
 					<td>&nbsp;=&nbsp;10&nbsp;+&nbsp;</td>
-					<td><input type="number" name="attr_RefLevel" value="0"  title="Reflex Level / Armor bonus"/></td>	
-					<td><input type="number" name="attr_RefClass" value="0" title="Reflex Class bonus" /></td>
-					<td> <select name="attr_RefMod" class="modtype" title="Reflex Ability Modifier (default DEX)">
+					<td><input type="number" name="attr_RefLevel" value="@{RefLevel|max}"  disabled="true" title="Reflex Level / Armor bonus @{RefLevel}"/></td>	
+					<td><input type="number" name="attr_RefClass" value="0" title="Reflex Class bonus @{RefClass}" /></td>
+					<td> <select name="attr_RefMod" class="modtype" title="Reflex Ability Modifier (default DEX) @{RefMod}">
 					  <option value="@{str|max}">STR</option>
-					  <option value="@{dex|max}" selected>DEX</option>
+					  <option value="@{dex|max}" selected>DEX</option>					  
+					  <option value="@{ArmorDex}">DEX (Max Armor)</option>
 					  <option value="@{con|max}">CON</option>
 					  <option value="@{int|max}">INT</option>
 					  <option value="@{wis|max}">WIS</option>
 					  <option value="@{cha|max}">CHA</option>
 					</select></td>
-					<td><input type="number" name="attr_RefMisc" value="0" title="Reflex Miscellaneous Modifier" /></td>
+					<td><input type="number" name="attr_RefMisc" value="0" title="Reflex Miscellaneous Modifier @{RefMisc}" /></td>
 				</tr>
 				<tr>
 					<td class="col1"><div class="small">Flatfooted</div></td>
-					<td><input type="number" name="attr_ReflexFlatFooted" value="10+@{RefLevel}+@{RefClass}+@{RefFlatFootedMisc}+@{RefSizeMod}+@{CT}" disabled="true"  title="Reflex Flat Footed" /></td>
+					<td><input type="number" name="attr_ReflexFlatFooted" value="10+@{RefLevel}[Level]+@{RefClass}[Class]+@{RefFlatFootedMisc}[Misc]+@{RefSizeMod}[Size Mod]+@{CT}[CT]" disabled="true"  title="Reflex Flat Footed @{ReflexFlatFooted}" /></td>
 					<td></td>
 					<td colspan="2" align="right">
-						<select name="attr_RefSizeMod" class="modtype" style="width:80px" title="Choose your racial size for determining Reflex.">
+						<select name="attr_RefSizeMod" class="modtype" style="width:80px" title="Choose your racial size for determining Reflex. @{RefSizeMod}">
 							  <option value="-10">Colossal</option>                
 							  <option value="-5">Gargantuan</option>
 							  <option value="-2">Huge</option>
@@ -225,15 +225,19 @@
 							  <option value="10">Fine</option>
 						</select>
 					</td>
-					<td><input type="number" name="attr_RefFlatFootedMisc" value="0" /></td>
+					<td><input type="number" name="attr_RefFlatFootedMisc" value="0" title="Reflex Flat Footed Miscellaneous Modifier @{RefFlatFootedMisc}" /></td>
+				</tr>
+				<tr>	<td colspan="7" align="right">
+						<input type="checkbox" class="sheet-DefArmorLevelShow sheet-hidden" value="1" name="attr_armor-show_max" /><span class="sheet-DefArmorLevelBody sheet-not-sheet-show">		<input type="text" name="attr_RefLevel_max" value="@{level}" title="Reflex Level Formula @{RefLevel|max}" style="width:95%" />	</span>
+					</td>
 				</tr>
 				<tr>
 					<td class="col1">Fortitude</td>
-					<td><input type="number" name="attr_Fortitude" value="10+@{FortMod}+@{FortLevel}+@{FortClass}+@{FortMisc}+@{CT}" disabled="true" />
+					<td><input type="number" name="attr_Fortitude" value="10+@{FortMod}[Mod]+@{FortLevel}[Level]+@{FortClass}[Class]+@{FortMisc}[Misc]+@{CT}[CT]" disabled="true" title="Fortitude  @{Fortitude}" />
 					<td>&nbsp;=&nbsp;10&nbsp;+&nbsp;</td>
-					<td><input type="number" name="attr_FortLevel" value="0"  title="Fortitude Level / Armor bonus" /></td>	
-					<td><input type="number" name="attr_FortClass" value="0" title="Fortitude Class bonus" /></td>
-					<td> <select name="attr_FortMod" class="modtype " title="Fortitude Ability Modifier (default CON)">
+					<td><input type="number" name="attr_FortLevel" value="@{FortLevel|max}"  disabled="true"  title="Fortitude Level / Armor bonus @{FortLevel}" /></td>	
+					<td><input type="number" name="attr_FortClass" value="0" title="Fortitude Class bonus @{FortClass}" /></td>
+					<td> <select name="attr_FortMod" class="modtype " title="Fortitude Ability Modifier (default CON) @{FortMod}">
 					  <option value="@{str|max}">STR</option>
 					  <option value="@{dex|max}">DEX</option>
 					  <option value="@{con|max}" selected>CON</option>
@@ -241,15 +245,19 @@
 					  <option value="@{wis|max}">WIS</option>
 					  <option value="@{cha|max}">CHA</option>
 					</select></td>
-					<td><input type="number" name="attr_FortMisc" value="0" title="Fortitude Miscellaneous Modifier" /></td>
+					<td><input type="number" name="attr_FortMisc" value="0" title="Fortitude Miscellaneous Modifier @{FortMisc}" /></td>
+				</tr>
+				<tr>	<td colspan="7" align="right">	
+						<input type="checkbox" class="sheet-DefArmorLevelShow sheet-hidden" value="1" name="attr_armor-show_max" /> <span class="sheet-DefArmorLevelBody sheet-not-sheet-show">		<input type="text" name="attr_FortLevel_max" value="@{level}" title="Fortitude Level Formula @{FortLevel|max}" style="width:95%" />	</span>
+					</td>
 				</tr>
 				<tr>
 					<td class="col1">Will</td>
-					<td><input type="number" name="attr_Will" value="10+@{WillMod}+@{WillLevel}+@{WillClass}+@{WillMisc}+@{CT}" disabled="true" /></td>
+					<td><input type="number" name="attr_Will" value="10+@{WillMod}[Mod]+@{WillLevel}[Level]+@{WillClass}[Class]+@{WillMisc}[Misc]+@{CT}[CT]" disabled="true" title="Will @{Will}" /></td>
 					<td>&nbsp;=&nbsp;10&nbsp;+&nbsp;</td>
-					<td><input type="number" name="attr_WillLevel" value="0" title="Will Level / Armor bonus"/></td>		
-					<td><input type="number" name="attr_WillClass" value="0" title="Will Class bonus" /></td>
-					<td> <select name="attr_WillMod" class="modtype" title="Will Ability Modifier (default WIS)">
+					<td><input type="number" name="attr_WillLevel" value="@{WillLevel|max}"  disabled="true" title="Will Level / Armor bonus @{WillLevel}"/></td>		
+					<td><input type="number" name="attr_WillClass" value="0" title="Will Class bonus @{WillClass}" /></td>
+					<td> <select name="attr_WillMod" class="modtype" title="Will Ability Modifier (default WIS) @{WillMod}">
 					  <option value="@{str|max}">STR</option>
 					  <option value="@{dex|max}">DEX</option>
 					  <option value="@{con|max}">CON</option>
@@ -257,7 +265,11 @@
 					  <option value="@{wis|max}" selected>WIS</option>
 					  <option value="@{cha|max}">CHA</option>
 					</select></td>
-					<td><input type="number" name="attr_WillMisc" value="0" title="Will Miscellaneous Modifier" /></td>
+					<td><input type="number" name="attr_WillMisc" value="0" title="Will Miscellaneous Modifier @{WillMisc}" /></td>
+				</tr>
+				<tr>	<td colspan="7" align="right">
+						<input type="checkbox" class="sheet-DefArmorLevelShow sheet-hidden" value="1" name="attr_armor-show_max" /><span class="sheet-DefArmorLevelBody sheet-not-sheet-show">	<input type="text" name="attr_WillLevel_max" value="@{level}" title="Fortitude Level Formula @{WillLevel|max}" style="width:95%" /> </span>	
+					</td>
 				</tr>
 			  </tbody>
 			</table>
@@ -267,14 +279,14 @@
 				<tr colspan="5"><div class="textHead">Armor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="sheet-sect-show" title="Show/Hide Armor Section" name="attr_armor-show" value="1" style="opacity:0;width: 35px;height: 16px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span></span></div></tr>
 				<tr>	<th width="50%">Armor Worn</th>		<th class="small">Ref Def<br />Bonus</th>		<th class="small">Fort Def<br />Bonus</th>		<th class="small" width="90px">Max Dex<br />Bonus</th>		<th>Speed</th>		</tr>
 				<tr>
-					<td><input type="text" name="attr_ArmorWorn" style="width:100%" title="Armor Name" /></td>
-					<td><input type="number" name="attr_ArmorRef" value="0"  title="Armor Reflex Defence Bonus" /></td>
-					<td><input type="number" name="attr_ArmorFort" value="0" title="Armor Fortitude Defence Bonus"  /></td>
-					<td><input type="number" name="attr_ArmorDex" value="0"  title="Armor Max DEX" /></td>
-					<td><input type="number" name="attr_Speed_max" value="0" title="Armor Max Speed"  /></td>
+					<td><input type="text" name="attr_ArmorWorn" style="width:100%" title="Armor Name @{ArmorWorn}" /></td>
+					<td><input type="number" name="attr_ArmorRef" value="0"  title="Armor Reflex Defense Bonus @{ArmorRef}" /></td>
+					<td><input type="number" name="attr_ArmorFort" value="0" title="Armor Fortitude Defense Bonus @{ArmorFort}"  /></td>
+					<td><input type="number" name="attr_ArmorDex" value="0"  title="Armor Max DEX @{ArmorDex}" /></td>
+					<td><input type="number" name="attr_Speed_max" value="0" title="Armor Max Speed @{Speed|max}"  /></td>
 				</tr>
 				<tr>		
-					<td colspan="5"><textarea type="text" name="attr_ArmorNotes" class="atkNotes" title="Armor Notes"  placeholder="Armor Notes"></textarea></td>
+					<td colspan="5"><textarea type="text" name="attr_ArmorNotes" class="atkNotes" title="Armor Notes @{ArmorNotes}"  placeholder="Armor Notes"></textarea></td>
 				</tr>
 			</table>
 			<br />			
@@ -339,7 +351,8 @@
 					</table>
 				</fieldset>
 		</div>	
-		<div class="col">  
+		<div class="col">
+			<input type="checkbox" class="sheet-forceShow sheet-hidden" value="1" name="attr_force-Show" />
 			<table>
 				<tr><div class="textHead">Skills</div></tr>
 					<thead>
@@ -739,7 +752,7 @@
 						<td><input type="checkbox" value="5" name="attr_UseComputerFeat_max" title="Focused in Use Computer?" /></td> <!-- Skill Focus -->
 						<td><input type="number" class="skills" name="attr_UseComputerMisc" title="Use Computer Miscellaneous Modifier" value="0" /></td>
 					</tr>
-					<tr>
+					<tr class="forceBody">
 						<td class="skillsCol1">Use the Force</td>
 						<td><button type="roll" name="roll_UsetheForceCheck" value="&{template:skill} {{name=Use the Force}} {{skill=[[1d20+@{UsetheForce}+?{Other Modifiers|0}[Other]]]}}" title="Roll Use the Force"></button></td>
 						<td><input type="number" class="skills" name="attr_UsetheForce" value="@{level|max}[Half Level]+@{UsetheForceMod}[Mod]+@{UsetheForceFeat}[Training]+@{UsetheForceFeat|max}[Focus]+@{UsetheForceMisc}[Misc]+@{CT}[CT]" disabled="true" title="Use the Force Total" /></td> <td>&nbsp;=&nbsp;</td>	
