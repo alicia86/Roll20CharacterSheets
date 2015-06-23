@@ -217,7 +217,7 @@
 						<th></th>
 						<th>Total</th>
 						<th></th>
-						<th><input type="checkbox" class="DefArmorLevelShow" title="Show/Hide Armor / Level Formulas" name="attr_levelarmor-show" value="1" style="opacity:0;width: 35px;height: 32px;position: relative;top: 5px;left: 6px;margin: -32px;cursor: pointer;z-index: 1;" /><span class="not-sheet-show displayInline-block">Level /<br/>Armor</span></th>
+						<th>Level /<br/>Armor	<input type="checkbox" class="DefArmorLevelShow" title="Show/Hide Armor / Level Formulas" name="attr_levelarmor-show" value="1" style="opacity:0;width: 41px;height: 36px;position: relative;margin-left: -45px;cursor: pointer;z-index: 1;" /></th>
 						<th>Class</th>					
 						<th>Mod</th>
 						<th>Misc</th>
@@ -1164,7 +1164,7 @@
 		<div class="col">
 			<label class="long">&nbsp;Class:</label><input type="text" name="attr_rank" class="header" style="width:75%" /><br />
 			<label>&nbsp;Heroic Level:</label><input type="number" name="attr_level" class="header" value="1" Title="Heroic Levels" />  <label>&nbsp;Non-Heroic Level:</label><input type="number" name="attr_nonlevel" class="header" value="0" Title="Non-Heroic Levels" />     <input type="number" name="attr_level_max" value="[[(floor((@{level}+@{nonlevel})/2))]]"  disabled="true" class="header" title="Half total Levels" /><br />
-			<label class="long">Species:</label><input type="text" name="attr_species" class="header" /><br />
+			<label class="long">Species:</label><input type="text" name="attr_species"/><br />
 		</div>
 		<div class="col">   
 			<div class="record"><img height="101" width="300" src="http://i.imgur.com/DzKBH23.png"/> <br />
@@ -1509,7 +1509,7 @@
 <div class="tab-content tab3">
 <div class="3colrow">
     <div class="col"> 
-		<label>Class:</label><input type="text" name="attr_vehicle-class" class="header" /><br />	
+		<label>Class:</label><input type="text" name="attr_vehicle-class" /><br />	
 		<label>&nbsp;Size:</label><select name="attr_vehicle-SizeMod" class="modtype" style="width:160px" title="Choose the vehicle's size for the mofidier applied to Reflex and Pilot's Initiative and Pilot checks.">
 							  <option value="-10">Colossal (station)</option>                
 							  <option value="-10">Colossal (cruiser)</option>
@@ -1519,12 +1519,12 @@
 							  <option value="-2">Huge</option>
 							  <option value="-1">Large</option>
 						</select><br />		
-		<label>Crew:</label><input type="number" name="attr_vehicle-crew" class="header" /><br />			
+		<label>Crew:</label><input type="number" name="attr_vehicle-crew" /><br />			
 	</div>
 	<div class="col">
-    	<label>&nbsp;Type:</label><input type="text" name="attr_vehicle-type" class="header" /><br />
-		<label>Cover:</label><input type="text" name="attr_vehicle-cover" class="header" /><br />
-		<label class="long">Passengers:</label><input type="number" name="attr_vehicle-passengers" class="header" /><br />
+    	<label>&nbsp;Type:</label><input type="text" name="attr_vehicle-type" /><br />
+		<label>Cover:</label><input type="text" name="attr_vehicle-cover" /><br />
+		<label class="long">Passengers:</label><input type="number" name="attr_vehicle-passengers" /><br />
     </div>
 	<div class="col">   
         <div class="record"><img height="101" width="300" src="http://i.imgur.com/DzKBH23.png"/> <br />
